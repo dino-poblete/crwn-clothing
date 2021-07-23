@@ -6,6 +6,7 @@ import { Switch, Route } from "react-router-dom";
 import Header from "./components/header/header.component";
 import SignInAndSignUpPage from "./pages/sign-in-and-sign-up/sign-in-and-sign-up.component";
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
+import { LastLocationProvider } from "react-router-last-location";
 
 class App extends Component {
   constructor() {
@@ -44,13 +45,22 @@ class App extends Component {
   }
 
   render() {
+    const currentUser = this.state.currentUser;
     return (
       <div>
-        <Header currentUser={this.state.currentUser} />
+        <Header currentUser={currentUser} />
         <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route exact path="/shop" component={ShopPage} />
-          <Route exact path="/signin" component={SignInAndSignUpPage} />
+          <LastLocationProvider>
+            <Route exact path="/" component={HomePage} />
+            <Route exact path="/shop" component={ShopPage} />
+            <Route
+              exact
+              path="/signin"
+              component={() => (
+                <SignInAndSignUpPage currentUser={currentUser} />
+              )}
+            />
+          </LastLocationProvider>
         </Switch>
       </div>
     );
