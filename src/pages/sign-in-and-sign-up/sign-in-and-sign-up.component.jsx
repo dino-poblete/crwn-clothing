@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 import { Redirect, withRouter } from "react-router-dom";
 import { useLastLocation } from "react-router-last-location";
 import SignIn from "../../components/sign-in/sign-in.component";
@@ -24,4 +25,8 @@ const SignInAndSignUpPage = ({ currentUser }) => {
   }
 };
 
-export default withRouter(SignInAndSignUpPage);
+const mapStateToProps = (state) => ({
+  currentUser: state.user.currentUser,
+});
+
+export default withRouter(connect(mapStateToProps)(SignInAndSignUpPage));
