@@ -13,7 +13,6 @@ import { setCurrentUser } from "./redux/user/user.action";
 class App extends Component {
   onAuthStateChanged = () => {
     const { setCurrentUser } = this.props;
-
     auth.onAuthStateChanged(async (userAuth) => {
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
