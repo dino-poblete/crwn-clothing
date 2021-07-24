@@ -36,12 +36,14 @@ class App extends Component {
     });
   };
 
+  unsubscribeFromAuth = null;
+
   componentDidMount() {
-    this.onAuthStateChanged();
+    this.unsubscribeFromAuth = this.onAuthStateChanged();
   }
 
   componentWillUnmount() {
-    this.onAuthStateChanged();
+    this.unsubscribeFromAuth();
   }
 
   render() {
