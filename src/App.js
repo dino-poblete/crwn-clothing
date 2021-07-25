@@ -9,6 +9,7 @@ import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 import { LastLocationProvider } from "react-router-last-location";
 import { connect } from "react-redux";
 import { setCurrentUser } from "./redux/user/user.action";
+import CheckoutPage from "./pages/checkout/checkout.component";
 
 class App extends Component {
   onAuthStateChanged = () => {
@@ -47,7 +48,8 @@ class App extends Component {
         <Switch>
           <LastLocationProvider>
             <Route exact path="/" component={HomePage} />
-            <Route exact path="/shop" component={ShopPage} />
+            <Route path="/shop" component={ShopPage} />
+            <Route exact path="/checkout" component={CheckoutPage} />
             <Route
               exact
               path="/signin"
