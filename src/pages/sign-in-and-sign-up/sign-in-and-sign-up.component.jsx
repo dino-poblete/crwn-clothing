@@ -6,6 +6,7 @@ import { createStructuredSelector } from "reselect";
 import SignIn from "../../components/sign-in/sign-in.component";
 import SignUp from "../../components/sign-up/sign-up.component";
 import { selectCurrentUser } from "../../redux/user/user.selector";
+import { SignInAndSignUpContainer } from "./sign-in-and-sign-up.style";
 import "./sign-in-and-sign-up.style.scss";
 
 const SignInAndSignUpPage = ({ currentUser }) => {
@@ -19,10 +20,10 @@ const SignInAndSignUpPage = ({ currentUser }) => {
     }
   } else {
     return (
-      <div className="sign-in-and-sign-up">
+      <SignInAndSignUpContainer>
         <SignIn />
         <SignUp />
-      </div>
+      </SignInAndSignUpContainer>
     );
   }
 };
