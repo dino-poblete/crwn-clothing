@@ -4,7 +4,7 @@ import {
   addItem,
   clearItemFromCart,
   removeItem,
-} from "../../redux/cart/cart.action";
+} from "../../redux/cart/cart.actions";
 import {
   CheckoutItemContainer,
   ImageContainer,
@@ -13,7 +13,7 @@ import {
   RemoveButtonContainer,
 } from "./checkout-item.styles";
 
-const CheckoutItem = ({ cartItem, clearItem, addItem, removeItem }) => {
+export const CheckoutItem = ({ cartItem, clearItem, addItem, removeItem }) => {
   const { imageUrl, name, quantity, price } = cartItem;
 
   return (

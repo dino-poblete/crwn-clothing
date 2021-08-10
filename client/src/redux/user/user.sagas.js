@@ -12,7 +12,7 @@ import {
   signOutSuccess,
   signUpSuccess,
   signUpFailure,
-} from "./user.action";
+} from "./user.actions";
 import UserActionTypes from "./user.types";
 
 export function* getSnapshotFromUserAuth(userAuth, additionalData) {
@@ -75,7 +75,7 @@ export function* signOut() {
     yield auth.signOut();
     yield put(signOutSuccess());
   } catch (error) {
-    yield put(signOutFailure(error.message));
+    yield put(signOutFailure(error));
   }
 }
 

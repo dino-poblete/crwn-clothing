@@ -2,7 +2,7 @@ import React, { lazy, useEffect } from "react";
 
 import { Route } from "react-router-dom";
 import { connect } from "react-redux";
-import { fetchCollectionsStart } from "../../redux/shop/shop.action";
+import { fetchCollectionsStart } from "../../redux/shop/shop.actions";
 import { Suspense } from "react";
 import Spinner from "../../components/spinner/spinner.component";
 
@@ -13,7 +13,7 @@ const CollectionPageContainer = lazy(() =>
   import("../collection/collection.container")
 );
 
-const ShopPage = ({ fetchCollectionsStart, match }) => {
+export const ShopPage = ({ fetchCollectionsStart, match }) => {
   useEffect(() => {
     fetchCollectionsStart();
   }, [fetchCollectionsStart]);

@@ -5,7 +5,7 @@ import { LastLocationProvider } from "react-router-last-location";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 import { selectCurrentUser } from "./redux/user/user.selector";
-import { checkUserSession } from "./redux/user/user.action";
+import { checkUserSession } from "./redux/user/user.actions";
 import { GlobalStyle } from "./global.styles";
 import { Suspense } from "react";
 import Spinner from "./components/spinner/spinner.component";

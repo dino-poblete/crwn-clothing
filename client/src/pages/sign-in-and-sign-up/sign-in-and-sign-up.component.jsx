@@ -8,7 +8,7 @@ import SignUp from "../../components/sign-up/sign-up.component";
 import { selectCurrentUser } from "../../redux/user/user.selector";
 import { SignInAndSignUpContainer } from "./sign-in-and-sign-up.style";
 
-const SignInAndSignUpPage = ({ currentUser }) => {
+export const SignInAndSignUpPage = ({ currentUser }) => {
   const lastLocation = useLastLocation();
 
   if (currentUser) {

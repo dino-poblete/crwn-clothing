@@ -8,7 +8,7 @@ import {
   CollectionItemsContainer,
 } from "./collection.styles";
 
-const CollectionPage = ({ collection: { title, items } }) => {
+export const CollectionPage = ({ collection: { title, items } }) => {
   return (
     <CollectionPageContainer>
       <CollectionTitle>{title}</CollectionTitle>

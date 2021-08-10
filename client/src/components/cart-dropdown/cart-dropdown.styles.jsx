@@ -27,6 +27,10 @@ export const EmptyMessageContainer = styled.span`
   margin: 50px auto;
 `;
 
+EmptyMessageContainer.displayName = "EmptyMessageContainer";
+
 export const CheckoutButtonContainer = styled(CustomButton)`
   margin-top: auto;
 `;
+
+CheckoutButtonContainer.displayName = "CheckoutButtonContainer";

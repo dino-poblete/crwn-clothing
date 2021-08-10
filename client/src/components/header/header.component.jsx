@@ -12,9 +12,9 @@ import {
   OptionLink,
   OptionsContainer,
 } from "./header.styles";
-import { signOutStart } from "../../redux/user/user.action";
+import { signOutStart } from "../../redux/user/user.actions";
 
-const Header = ({ currentUser, isCartDropdownHidden, signOutStart }) => (
+export const Header = ({ currentUser, isCartDropdownHidden, signOutStart }) => (
   <HeaderContainer>
     <LogoContainer to="/">
       <Logo className="logo" />

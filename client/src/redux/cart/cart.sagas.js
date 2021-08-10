@@ -1,5 +1,5 @@
 import { all, call, put, select, takeLatest } from "redux-saga/effects";
-import { clearCart, setCartFromFirebase } from "./cart.action";
+import { clearCart, setCartFromFirebase } from "./cart.actions";
 import UserActionTypes from "../user/user.types";
 import { CartActionTypes } from "./cart.types";
 import { selectCurrentUser } from "../user/user.selector";
